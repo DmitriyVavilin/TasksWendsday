@@ -16,8 +16,7 @@ export const ChangeCurrencyFieldAC = (amountOfBYN: string, amountOfCurrency: str
         type: 'CHANGE-CURRENCY-FIELD',
         amountOfBYN,
         amountOfCurrency
-
-    }
+    } as const
 };
 
 export type ChangeAction = {
@@ -28,8 +27,8 @@ export type ChangeAction = {
 export const ChangeActionAC = (isBuying: boolean): ChangeAction => {
     return {
         type: 'CHANGE-ACTIONS',
-        isBuying
-    }
+        isBuying: isBuying
+    } as const
 };
 
 export type ChangeCurrentCurrencyType = {
@@ -41,7 +40,7 @@ export const СhangeCurrentCurrencyAC = (currentCurrency: string): ChangeCurrent
     return {
         type: 'CHANGE-CURRENT-CURRENCY',
         currentCurrency
-    }
+    } as const
 };
 
 export type CurrencyReducersTypes = ChangeCurrencyFieldType | ChangeAction | ChangeCurrentCurrencyType;

@@ -39,8 +39,22 @@ const initialState: CurrencyState = {
 };
 
 export const currencyReducer = (state: CurrencyState = initialState, action: CurrencyReducersTypes): CurrencyState => {
-    // @ts-ignore
     switch (action.type) {
+        case 'CHANGE-CURRENCY-FIELD': {
+            return {
+                ...state
+            }
+        }
+        case 'CHANGE-ACTIONS': {
+            return {
+                ...state,
+            }
+        }
+        case 'CHANGE-CURRENT-CURRENCY': {
+            return {
+                ...state,
+            }
+        }
         default:
             return state;
     }
