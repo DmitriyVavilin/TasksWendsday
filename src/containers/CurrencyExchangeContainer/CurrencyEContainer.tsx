@@ -1,35 +1,28 @@
 import React from 'react';
 import CurrencyExchange from '../../components/CurrencyExchange/CurrencyExchange';
-import {currencyReducer, CurrencyState, CurrencyType} from '../../redux/currencyReducer';
-import {Dispatch} from 'redux';
-import {
-    ChangeActionAC,
-    ChangeCurrencyFieldAC,
-    ChangeCurrentCurrencyAC,
-    CurrencyReducersTypes
-} from '../../redux/actions';
+import {CurrencyState, CurrencyType} from '../../redux/currencyReducer';
+import {ChangeActionAC, ChangeCurrencyFieldAC, ChangeCurrentCurrencyAC} from '../../redux/actions';
 import {connect, ConnectedProps, useDispatch, useSelector} from 'react-redux';
 import {IGlobalState} from "../../redux/state";
 
 
-const CurrencyEContainer: React.FC<TProps> = props => {
+export const CurrencyEContainer: React.FC = () => {
 
     const  setCurrencyAmount = (amountOfBYN: string, amountOfCurrency: string) => {
         dispatch(ChangeCurrencyFieldAC(amountOfBYN, amountOfCurrency));
     }
-
     const setAction = (isBuying: boolean) => {
         dispatch(ChangeActionAC(isBuying));
     }
-
     const changeCurrency = (currency: string) => {
         dispatch(ChangeCurrentCurrencyAC(currency));
     }
 
     const currency = useSelector<IGlobalState, CurrencyState>(state => state.currency)
     const dispatch = useDispatch()
-    const currentCurrency = currency.currentCurrency
-    const currencyisBuying = currency.currentCurrency
+
+    let currentCurrency = currency.currentCurrency
+    let currencyisBuying = currency.currentCurrency
 
     let currencyRate: number = 0;
     const currenciesName = currency.currencies.map((currency: CurrencyType) => {
@@ -86,10 +79,4 @@ const CurrencyEContainer: React.FC<TProps> = props => {
 };
 
 
-
-const connector = connect();
-
-type TProps = ConnectedProps<typeof connector>;
-
-export default connector(CurrencyEContainer);
 
