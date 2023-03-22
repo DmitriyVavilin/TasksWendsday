@@ -2,7 +2,7 @@ import React from 'react';
 import CurrencyExchange from '../../components/CurrencyExchange/CurrencyExchange';
 import {CurrencyState, CurrencyType} from '../../redux/currencyReducer';
 import {ChangeActionAC, ChangeCurrencyFieldAC, ChangeCurrentCurrencyAC} from '../../redux/actions';
-import {connect, ConnectedProps, useDispatch, useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {IGlobalState} from "../../redux/state";
 
 
