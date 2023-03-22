@@ -56,6 +56,23 @@ function makeCounter () {
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
 
+function makeCounter2(num:number) {
+    return {
+        increase() {
+            return num + 1
+        },
+        decrease() {
+            return num - 1
+        },
+        reset() {
+            return num = 0
+        },
+        set() {
+            return num
+        }
+    }
+}
+
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
 // и что бы корректно работали следующие вызовы:
