@@ -40,7 +40,7 @@ const sum = (a: number) => {
 // counter(); // 3
 
 
-function makeCounter () {
+function makeCounter() {
     let count = 1
     return () => {
         return count++
@@ -56,7 +56,7 @@ function makeCounter () {
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
 
-function makeCounter2(num:number) {
+function makeCounter2(num: number) {
     return {
         increase() {
             return num + 1
@@ -82,6 +82,26 @@ function makeCounter2(num:number) {
 // 4) superSum(3)(2,5,3) //10
 // 5) superSum(3)(2,5)(3) //10
 // 6) superSum(3)(2,5)(3,9) //10
+
+
+function superSum(n:number) {
+    if (n === 0) return 0;
+    if (n === 1) return (num: number) => num;
+
+    let _arguments: number[] = [];
+
+    function helper(...args: number[]) {
+        _arguments = [..._arguments, ...args];
+        if(_arguments.length >= n) {
+            _arguments.length = n;
+            return _arguments.reduce((acc, number) => acc + number)
+        } else {
+            return helper;
+        }
+    }
+    return helper;
+}
+
 
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
 
