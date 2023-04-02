@@ -92,6 +92,7 @@ function superSum(n:number) {
 
     function helper(...args: number[]) {
         _arguments = [..._arguments, ...args];
+
         if(_arguments.length >= n) {
             _arguments.length = n;
             return _arguments.reduce((acc, number) => acc + number)
@@ -107,6 +108,13 @@ function superSum(n:number) {
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
+function sumTo(x:number) {
+    let result = 0
+    for (let i = 1; i <= x; i++) {
+        result += i
+    }
+    return result
+}
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
