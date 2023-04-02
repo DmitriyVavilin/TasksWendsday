@@ -108,12 +108,20 @@ function superSum(n:number) {
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
-function sumTo(x:number) {
-    let result = 0
-    for (let i = 1; i <= x; i++) {
-        result += i
+function sumTo(x:number):any {
+    if(x === 1 ){
+        return 1
+    }else {
+        return x + sumTo(x - 1)
     }
-    return result
+}
+
+function factorial(n:number):any {
+    if (n === 1) {
+        return 1
+    } else  {
+        return n * factorial(n - 1)
+    }
 }
 
 // Task 06
