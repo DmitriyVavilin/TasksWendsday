@@ -124,6 +124,14 @@ function factorial(n:number):any {
     }
 }
 
+function fib(n: number): any {
+    if(n <= 0){
+        return 1
+    }else {
+        return fib(n - 1) + fib(n - 2)
+    }
+}
+
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
