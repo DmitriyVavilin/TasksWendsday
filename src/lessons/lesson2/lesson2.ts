@@ -125,8 +125,8 @@ function factorial(n:number):any {
 }
 
 function fib(n: number): any {
-    if(n <= 0){
-        return 1
+    if(n <= 1){
+        return n
     }else {
         return fib(n - 1) + fib(n - 2)
     }
