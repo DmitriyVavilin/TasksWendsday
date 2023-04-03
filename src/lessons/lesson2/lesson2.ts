@@ -132,6 +132,29 @@ function fib(n: number): any {
     }
 }
 
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+
+function printList(list:any):any {
+
+    console.log(list.value)
+
+    if (list.next) {
+        return printList(list.next)
+    }
+}
+
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
